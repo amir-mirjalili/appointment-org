@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import compression from "compression";
 import { Cors } from "./restapi/cors";
 import { ApiRes } from "./restapi/status";
+import AppointmentRouter from "../routers/appointment_routes";
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(Cors);
 
 // App routers
+app.use(AppointmentRouter);
 app.get("/", (req, res) => {
   ApiRes(res, <RestApi.ResInterface>{
     status: 200,
