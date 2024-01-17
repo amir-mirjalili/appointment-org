@@ -7,7 +7,7 @@ export const appointment_create = async (req: Request, res: Response) => {
     req.body.end,
     req.params.organization,
   );
-  const result = await appointmentCreate.create();
+  const result = await appointmentCreate.create(req.body.id);
 
   return ApiRes(res, {
     status: 200,
