@@ -6,4 +6,8 @@ export const AppointmentValidator = {
     start: Joi.date().required(),
     end: Joi.date().required(),
   }),
+  getByRange: Joi.object({
+    start: Joi.date().required(),
+    end: Joi.date().required(),
+  }),
 };

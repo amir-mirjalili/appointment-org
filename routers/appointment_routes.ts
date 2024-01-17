@@ -9,4 +9,9 @@ AppointmentRouter.post(
   [InputValidator(AppointmentValidator.create, "body")],
   AppointmentController.appointment_create,
 );
+AppointmentRouter.get(
+  `${appointment_routes}/:organization`,
+  [InputValidator(AppointmentValidator.getByRange, "query")],
+  AppointmentController.appointment_get_by_range,
+);
 export default AppointmentRouter;
